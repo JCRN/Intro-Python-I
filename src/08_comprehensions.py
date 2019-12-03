@@ -42,3 +42,6 @@ y = [n for n in x if int(n) % 2 == 0]
 
 print(y)
 
+"""NOTES: A list comprehension consists of brackets containing an expression followed by a for clause, then zero or 
+more for or if clauses. The result will be a new list resulting from evaluating the expression in the context of the 
+for and if clauses which follow it. """
