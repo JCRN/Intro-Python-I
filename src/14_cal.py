@@ -22,3 +22,14 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+c = calendar.TextCalendar(firstweekday=0)
+
+
+def print_cal(*args):
+    if len(args) == 0:
+        print('this month')
+    elif len(args) == 1:
+        print(c.month(args))
+    elif len(args) == 2:
+        print(c.month(args[1], args[0]))
