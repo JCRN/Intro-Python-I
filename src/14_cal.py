@@ -23,13 +23,14 @@ import sys
 import calendar
 from datetime import datetime
 
-c = calendar.TextCalendar(firstweekday=0)
+
+def cal(month=None, year=None):
+    month = month if month else datetime.today().month
+    year = year if year else datetime.today().year
+    calendar.prmonth(year, month)
 
 
-def print_cal(*args):
-    if len(args) == 0:
-        print('this month')
-    elif len(args) == 1:
-        print(c.month(args))
-    elif len(args) == 2:
-        print(c.month(args[1], args[0]))
+try:
+    cal(*[int(num) for num in sys.argv[1:]])
+except:
+    print(f"month and year must be valid integer values.")
